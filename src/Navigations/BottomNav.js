@@ -17,6 +17,7 @@ const Tab = createBottomTabNavigator();
 function BottomNav() {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+  console.log("🚀 ~ file: BottomNav.js:20 ~ BottomNav ~ userInfo:", userInfo)
   return (
     <Tab.Navigator
       backBehavior="Trang chủ"

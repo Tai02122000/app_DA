@@ -20,7 +20,8 @@ import { useNavigation } from "@react-navigation/native";
 import { AntDesign, EvilIcons, Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 import axios from "axios";
-const Url = `http://192.168.1.6:5000`;
+import { URL_SERVER } from "../../settings/url";
+const Url = URL_SERVER;
 function SingleProductScreen({ route }) {
   const [imgActive, setImageActive] = useState(0);
   const navigation = useNavigation();

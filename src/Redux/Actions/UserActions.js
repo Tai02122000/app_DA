@@ -17,6 +17,7 @@ import {
 } from "./../Constants/UserConstants";
 
 import { Storage } from "expo-storage";
+import { URL_SERVER } from "../../../settings/url";
 //login
 const setStorage = async (data) => {
   try {
@@ -136,7 +137,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(
-      `http://localhost:5000/api/users/${id}`,
+      `${URL_SERVER}/api/users/${id}`,
       config
     );
     dispatch({
@@ -177,7 +178,7 @@ export const updateProfile = (user) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.put(
-      `http://localhost:5000/api/users/profile`,
+      `${URL_SERVER}/api/users/profile`,
       user,
       config
     );

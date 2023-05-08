@@ -52,16 +52,17 @@ function Showing() {
               flexDirection="row"
               alignItems="center"
             >
-              <View w="30%" borderRightWidth={0.5} borderRightColor="gray.400">
-                <Image
-                  source={{
-                    uri: product.image,
-                  }}
-                  alt="img"
-                  h={20}
-                  resizeMode="contain"
-                />
-              </View>
+            <View w="30%" borderRightWidth={0.5} borderRightColor="gray.400">
+            <Image
+              source={{
+                uri: product.image,
+              }}
+              alt="img"
+              h={20}
+              
+              resizeMode="contain"
+            />
+          </View>
 
               <View ml={2} w="40%">
                 <Text isTruncated>{product.name}</Text>

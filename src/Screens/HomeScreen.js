@@ -16,6 +16,7 @@ import SlideScreen from "../Components/SlideScreen";
 import { ActivityIndicator, RefreshControl } from "react-native";
 import axios from "axios";
 import { Storage } from "expo-storage";
+import { URL_SERVER } from "../../settings/url";
 const wait = (timeout) => {
   return new Promise((resolve) => setTimeout(resolve, timeout));
 };
@@ -46,14 +47,14 @@ const categories = [
     image: require("../../assets/dodientu.jpg"),
   },
 ];
-const Url = `http://192.168.1.6:5000`;
+const Url = URL_SERVER;
 
 function HomeScreen() {
   const [pro, setPro] = useState([]);
   const [loading, setLoading] = useState(true);
   const fetchProducts = async () => {
     try {
-      const { data } = await axios.get(`${Url}/api/product/`);
+      const { data } = await axios.get(`${Url}/api/products`);
       const setProduct = await Storage.setItem({
         key: "productList",
         value: JSON.stringify(data),

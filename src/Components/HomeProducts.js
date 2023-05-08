@@ -7,6 +7,7 @@ import Colors from "../color";
 import Rating from "./Rating";
 
 function HomeProducts({ products }) {
+  console.log("🚀 ~ file: HomeProducts.js:10 ~ HomeProducts ~ products:", products)
   const navigation = useNavigation();
   const defaultOptions = {
     significantDigits: 2,
@@ -30,8 +31,11 @@ function HomeProducts({ products }) {
   return (
     <ScrollView flex={1} showsVerticalScrollIndicator={false}>
       <Flex flexWrap="wrap" direction="row" px={2}>
-        {products.map((product) => (
-          <TouchableOpacity
+        {products.map((product) => {
+        console.log("🚀 ~ file: HomeProducts.js:79 ~ {products.map ~ product:", product.image)
+
+          return (
+            <TouchableOpacity
             key={product._id}
             style={{
               width: "50%",
@@ -47,7 +51,7 @@ function HomeProducts({ products }) {
             <Image
               source={{ uri: product.image }}
               alt={product.name}
-              w="full"
+              w='full'
               h={24}
               resizeMode="contain"
             />
@@ -72,7 +76,8 @@ function HomeProducts({ products }) {
               </HStack>
             </Box>
           </TouchableOpacity>
-        ))}
+          )
+        })}
       </Flex>
     </ScrollView>
   );
